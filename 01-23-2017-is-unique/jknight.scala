@@ -19,7 +19,7 @@ object IsUnique extends App {
   }
 
   def isUniqueFoldLeft(str: String): Boolean = {
-    str.foldLeft(Set.empty[Char]) { (accum, current) => if (accum.contains(current)) return false
+    str.foldLeft(Set.empty[Char]) { (accum, current) => if (accum contains current) return false
       accum + current
     }
 
