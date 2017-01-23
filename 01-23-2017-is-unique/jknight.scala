@@ -18,6 +18,14 @@ object IsUnique extends App {
     true
   }
 
+  def isUniqueFoldLeft(str: String): Boolean = {
+    str.foldLeft(Set.empty[Char]) { (accum, current) => if (accum.contains(current)) return false
+      accum + current
+    }
+
+    true
+  }
+
   assert(isUniqueSet("abc"))
   assert(!isUniqueSet("abbc"))
 
@@ -26,4 +34,7 @@ object IsUnique extends App {
 
   assert(isUniqueIterative("abc"))
   assert(!isUniqueIterative("abbc"))
+
+  assert(isUniqueFoldLeft("abc"))
+  assert(!isUniqueFoldLeft("abbc"))
 }
