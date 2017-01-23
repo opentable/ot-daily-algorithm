@@ -11,7 +11,7 @@ object IsUnique extends App {
   }
 
   def isUniqueIterative(str: String): Boolean = {
-    str.sorted reduce { (prev, current) => if (prev == current) return false;
+    str.sorted reduce { (prev, current) => if (prev == current) return false
       current
     }
 
