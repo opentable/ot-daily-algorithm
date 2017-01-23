@@ -11,8 +11,16 @@ object IsUnique extends App {
   }
 
   def isUniqueIterative(str: String): Boolean = {
-    str.sorted reduce { (prev, current) => if (prev == current) return false;
+    str.sorted reduce { (prev, current) => if (prev == current) return false
       current
+    }
+
+    true
+  }
+
+  def isUniqueFoldLeft(str: String): Boolean = {
+    str.foldLeft(Set.empty[Char]) { (accum, current) => if (accum.contains(current)) return false
+      accum + current
     }
 
     true
@@ -26,4 +34,7 @@ object IsUnique extends App {
 
   assert(isUniqueIterative("abc"))
   assert(!isUniqueIterative("abbc"))
+
+  assert(isUniqueFoldLeft("abc"))
+  assert(!isUniqueFoldLeft("abbc"))
 }
