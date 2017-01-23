@@ -6,7 +6,7 @@ object IsUnique extends App {
   @tailrec
   def isUniqueRecursive(str: String): Boolean = str match {
     case _ if str.isEmpty => true
-    case _ if str.substring(1).contains(str.charAt(0)) => false
+    case _ if str.substring(1) contains str.charAt(0) => false
     case _ => isUniqueRecursive(str.substring(1))
   }
 
