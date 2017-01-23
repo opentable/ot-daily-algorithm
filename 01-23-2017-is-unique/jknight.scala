@@ -10,9 +10,20 @@ object IsUnique extends App {
     case _ => isUniqueRecursive(str.substring(1))
   }
 
+  def isUniqueIterative(str: String): Boolean = {
+    str.sorted reduce { (prev, current) => if (prev == current) return false;
+      current
+    }
+
+    true
+  }
+
   assert(isUniqueSet("abc"))
   assert(!isUniqueSet("abbc"))
 
   assert(isUniqueRecursive("abc"))
   assert(!isUniqueRecursive("abbc"))
+
+  assert(isUniqueIterative("abc"))
+  assert(!isUniqueIterative("abbc"))
 }
