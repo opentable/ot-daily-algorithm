@@ -18,6 +18,11 @@ object IsUnique extends App {
     true
   }
 
+  def isUniqueSliding(str: String): Boolean = str.sorted.sliding(2) forall {
+    case pair if pair.charAt(0) != pair.charAt(1) => true
+    case _ => false
+  }
+
   def isUniqueFoldLeft(str: String): Boolean = {
     str.foldLeft(Set.empty[Char]) { (accum, current) => if (accum contains current) return false
       accum + current
@@ -34,6 +39,9 @@ object IsUnique extends App {
 
   assert(isUniqueIterative("abc"))
   assert(!isUniqueIterative("abbc"))
+
+  assert(isUniqueSliding("abc"))
+  assert(!isUniqueSliding("abbc"))
 
   assert(isUniqueFoldLeft("abc"))
   assert(!isUniqueFoldLeft("abbc"))
