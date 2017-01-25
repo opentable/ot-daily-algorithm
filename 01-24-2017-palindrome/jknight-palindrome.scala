@@ -1,9 +1,12 @@
-trait PalindromeFilter[T] extends Function[List[T], List[T]]
+trait PalindromeFilter[T] extends (List[T] => List[T])
 
 object PalindromeFilter {
-  implicit def toNumericEvidence[T : Numeric]: PalindromeFilter[T] = new PalindromeFilter[T] {
-    def apply(v1: List[T]) = v1
+  private[this] final val singleInstance: PalindromeFilter[Any] = new PalindromeFilter[Any] {
+    def apply(v1: List[Any]) = v1
   }
+
+  implicit def toNumericEvidence[T : Numeric]: PalindromeFilter[T] =
+    singleInstance.asInstanceOf[PalindromeFilter[T]]
 
   implicit val charEvidence: PalindromeFilter[Char] = new PalindromeFilter[Char] {
     private[this] val Pattern = """([a-zA-Z0-9])""".r
@@ -33,4 +36,6 @@ object Palindrome extends App {
 
   assert(isPalindrome(List(1L, 2L, 3L, 4L, 3L, 2L, 1L)))
   assert(!isPalindrome(List(1L, 2L, 3L, 4L, 5L)))
+
+  //  assert(isPalindrome(List("aa", "bb", "cc"))) this will not compile since we have not given evidence
 }
