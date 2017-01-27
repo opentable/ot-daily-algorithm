@@ -5,7 +5,7 @@ object FindSubarray extends App {
   def findZeroSumSubArray(sum: Int, numbers: List[Int]): Boolean =
     if (sum == 0) true else numbers match {
       case Nil => false
-      case 0 :: _ => true // if any of the numbers are 0, there is a subaraay of size 1
+      case 0 :: _ => true // if any of the numbers are 0, there is a subarray of size 1
       case head :: tail => findZeroSumSubArray(sum + head, tail)
     }
 
