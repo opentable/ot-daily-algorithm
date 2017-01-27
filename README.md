@@ -18,6 +18,13 @@ For example, if the name of today's challenge is sort-list, you would create a n
 
 `daily-algorithm/01-01-2016-sort-list/your-name-sort-list.js`
 
+# Creating a new challenge
+
+```
+	npm install
+	npm run new-challenge --challengeName=${new-challenge-name}
+```
+
 # Why?
 Practice with alogrithms and data structures, that you don't normally use, helps us look at our everyday problems in a different light. 
 

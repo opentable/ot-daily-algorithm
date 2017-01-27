@@ -1,0 +1,24 @@
+{
+  "name": "ot-daily-algorithm",
+  "version": "1.0.0",
+  "description": "OpenTable daily algorithm challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new-challenge": "node bin/createNewChallenge"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentable/ot-daily-algorithm.git"
+  },
+  "author": "Jonathan Schapiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/opentable/ot-daily-algorithm/issues"
+  },
+  "homepage": "https://github.com/opentable/ot-daily-algorithm#readme",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "moment": "^2.17.1"
+  }
+}
