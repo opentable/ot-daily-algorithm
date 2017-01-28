@@ -103,8 +103,8 @@
                [Test]
                public void ErrorCases()
                {
-                   var distance0 = NodesAtKDistanceFromRootFinder.Find(_tree, -1);
-                   Assert.AreEqual(0, distance0.Count);
+                   var distanceNegative = NodesAtKDistanceFromRootFinder.Find(_tree, -1);
+                   Assert.AreEqual(0, distanceNegative.Count);
    
                    BTreeNode nullTree = null;
                    var distanceNull = NodesAtKDistanceFromRootFinder.Find(nullTree, 2);
