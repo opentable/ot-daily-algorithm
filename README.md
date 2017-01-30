@@ -1,3 +1,4 @@
+![alt text](https://avatars2.githubusercontent.com/u/2653541?v=3&s=200 "Logo Title Text 1")
 # ot-daily-algorithm
 
 This repository is dedicated to daily algorithm challenges.
