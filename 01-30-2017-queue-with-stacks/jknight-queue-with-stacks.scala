@@ -80,11 +80,7 @@ object QueueWithStacks extends App {
   }
 
   def assertImmutableDequeue(range: TraversableOnce[Int], queue: ImmutableQueue[Int]): ImmutableQueue[Int] =
-    range.foldLeft(queue) { (queue, num) =>
-      val (x, y) = queue.dequeue()
-      assert(num == x)
-      y
-    }
+    range.foldLeft(queue)((queue, num) => assertImmutableDequeue(num, queue))
 
   var immutableQueue = new ImmutableQueue().enqueue(1, 2, 3)
 
