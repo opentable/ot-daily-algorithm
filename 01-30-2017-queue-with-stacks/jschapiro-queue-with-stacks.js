@@ -3,9 +3,11 @@ function queueFromStack() {
   const stack2 = [];
   
   function _pop() {
-    return stack1.length ?
-      stack1.pop():
-      null;
+    if (stack1.length) {
+      return stack1.pop();
+    }
+
+    throw new Error('Queue is empty');
   }
   
   function _push(val) {
@@ -40,4 +42,4 @@ ds.pop(); // a
 ds.pop(); // b
 ds.pop(); // c
 ds.pop(); // d
-ds.pop(); // null 
+ds.pop(); // throws
