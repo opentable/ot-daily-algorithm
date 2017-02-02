@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 const path = require('path');
+const fs = require('fs');
 const moment = require('moment');
 const mkdirp = require('mkdirp');
 
@@ -18,6 +19,11 @@ const challengePath = path.resolve(process.cwd()) + '/' + challengeDate + '-' + 
 
 mkdirp(challengePath, function (err) {
     if (err) console.error(err)
-    else console.log('New Challenge Created!')
+    fs.writeFile(challengePath + '/README.md', '', function (err,data) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log('New Challenge Created!');
+    });
 });
 
