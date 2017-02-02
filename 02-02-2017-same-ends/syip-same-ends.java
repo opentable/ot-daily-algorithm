@@ -12,8 +12,6 @@ package sameends;
  * Solution: Start at the middle, find longest matching substring
  */
 public class SameEnds {
-
-
     public static String sameEnds (String string) {
         int midpoint = string.length()/2;
         int length = string.length();
