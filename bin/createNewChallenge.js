@@ -5,7 +5,7 @@ const moment = require('moment');
 const mkdirp = require('mkdirp');
 
 const challengeName = process.env.npm_config_challengeName;
-const challengeDate = moment().format('MM/DD/YYYY').split('/').join('-');
+const challengeDate = moment().format('YYYY/MM/DD').split('/').join('-');
 
 if (!challengeName) {
 	return console.error(new Error('You must provide a challenge name'));
