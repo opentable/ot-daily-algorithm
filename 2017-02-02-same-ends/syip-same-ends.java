@@ -1,5 +1,4 @@
 package sameends;
-
 /**
  * @author syip
  * Given a string, return the longest substring that appears at both the 
