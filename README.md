@@ -27,7 +27,7 @@ For example, if the name of today's challenge is sort-list, you would create a n
 ```
 
 # Why?
-Practice with alogrithms and data structures, that you don't normally use, helps us look at our everyday problems in a different light. 
+Practice with algorithms and data structures, that you don't normally use, helps us look at our everyday problems in a different light.
 
 # Email List
 To join the mailing list, visit the following link:
