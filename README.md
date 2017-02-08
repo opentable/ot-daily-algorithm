@@ -29,6 +29,9 @@ For example, if the name of today's challenge is sort-list, you would create a n
 # Why?
 Practice with algorithms and data structures, that you don't normally use, helps us look at our everyday problems in a different light.
 
+# Slack Channel
+https://ot-daily-algorithm.slack.com/
+
 # Email List
 To join the mailing list, visit the following link:
 https://outlook.office365.com/owa/dailyalgorithm@opentable.onmicrosoft.com/groupsubscription.ashx?action=join&guid=855a5157-e944-315f-0e17-238eb6c0f88
