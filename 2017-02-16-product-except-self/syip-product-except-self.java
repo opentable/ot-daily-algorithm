@@ -17,16 +17,16 @@ public class ProductExceptSelf {
         int[] rightToLeft = new int[length];
         int[] leftToRight = new int[length];
         int[] products = new int[length];
-        rightToLeft[0] = 1;
-        leftToRight[length-1] = 1;
+        leftToRight[0] = 1;
+        rightToLeft[length-1] = 1;
         for(int i = 0; i < length-1; i++){
-            rightToLeft[i+1] = numArray[i] * rightToLeft[i];
+            leftToRight[i+1] = numArray[i] * leftToRight[i];
         }
         for(int j = length-1; j > 0; j--) {
-            leftToRight[j-1] = numArray[j] * leftToRight[j];
+            rightToLeft[j-1] = numArray[j] * rightToLeft[j];
         }
         for (int k = 0; k < length; k++) {
-            products[k] = rightToLeft[k] * leftToRight[k];
+            products[k] = leftToRight[k] * rightToLeft[k];
         }
         return products;
     }
