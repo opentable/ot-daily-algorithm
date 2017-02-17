@@ -1,3 +1,8 @@
+package com.ot.algorithms.date20170217validParantheses;
+
+import java.util.HashMap;
+import java.util.Stack;
+
 public class ParanthesesValidator {
 
     private static HashMap<Character, Character> openChars = new HashMap<>();
@@ -30,8 +35,12 @@ public class ParanthesesValidator {
                 }
 
                 Character previous = stack.pop();
-                if (isOpenChar(previous) &&
-                     previous != getMatchingOpenChar(current)) {
+
+                if (isClosedChar(previous)) {
+                    return false;
+                }
+                
+                if (previous != getMatchingOpenChar(current)) {
                     return false;
                 }
             } else {
@@ -56,6 +65,7 @@ public class ParanthesesValidator {
         return closedChars.get(c);
     }
 }
+
 
 public class ParanthesesValidatorTest {
 
