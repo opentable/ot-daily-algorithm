@@ -33,13 +33,10 @@ public class ParanthesesValidator {
                 if (stack.size() == 0) {
                     return false;
                 }
-
                 Character previous = stack.pop();
-
                 if (isClosedChar(previous)) {
                     return false;
                 }
-                
                 if (previous != getMatchingOpenChar(current)) {
                     return false;
                 }
