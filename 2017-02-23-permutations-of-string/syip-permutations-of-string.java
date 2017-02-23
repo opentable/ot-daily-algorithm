@@ -27,7 +27,7 @@ public class PermutationsOfString {
         for(String str : strList) {
             for (int i = 0; i < str.length()+1 ; i++){
                 String newStr = str.substring(0,i) + ch + str.substring(i);
-                if (!result.contains(newStr)) result.add(newStr);
+                result.add(newStr);
             }
         }
         return result;
