@@ -88,13 +88,13 @@ function test_sort(size, random_range, presorted='RANDOM') {
     + ' Random range: 1..' + random_range.toString()
     + '; Initial state: ' + presorted;
 
-  console.time('NodeJS ' + label);
+  console.time('Node lib ' + label);
   node_sorted.sort(function(a, b){return a-b});
-  console.timeEnd('NodeJS ' + label);
+  console.timeEnd('Node lib ' + label);
 
-  console.time('OUR ' + label);
+  console.time('OUR quick' + label);
   quicksort(our_sorted, 0, size-1);
-  console.timeEnd('OUR ' + label);
+  console.timeEnd('OUR quick' + label);
 
   if (arr_eq(our_sorted, node_sorted)) {
     console.log("Sorted!!!\n");
