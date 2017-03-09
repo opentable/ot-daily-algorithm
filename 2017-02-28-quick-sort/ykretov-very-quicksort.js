@@ -74,7 +74,7 @@ function test_sort(size, random_range, presorted='RANDOM') {
     numbers[i] = randomInt(1, random_range);
   }
 
-  if (presorted == 'ASK') {
+  if (presorted == 'ASC') {
     numbers = numbers.sort(function(a, b){return a-b});
   }
   if (presorted == 'DESC') {
@@ -116,7 +116,7 @@ var fnName = function() {
     var test_range = [ 2, 100, 100000 ];
 //    var test_range = [ 2 ];
     for (var j=0; j < test_range.length; j++) {
-      var test_presort = [ 'ASK', 'DESC', 'RANDOM' ];
+      var test_presort = [ 'ASC', 'DESC', 'RANDOM' ];
       for (var k=0; k < test_presort.length; k++) {
         test_sort(test_lenghts[i], test_range[j], test_presort[k]);
       }
