@@ -10,6 +10,17 @@ import java.util.*;
  * Solution: Derive list based on solution of substring
  */
 public class LetterCombinationsPhoneNumber {
+    private static Map<Integer, List<Character>> NUMBER_TO_CHAR_LIST = new HashMap<>();
+    static {
+        NUMBER_TO_CHAR_LIST.put(2,new ArrayList<>(Arrays.asList('a', 'b', 'c')));
+        NUMBER_TO_CHAR_LIST.put(3,new ArrayList<>(Arrays.asList('d', 'e', 'f')));
+        NUMBER_TO_CHAR_LIST.put(4,new ArrayList<>(Arrays.asList('g', 'h', 'i')));
+        NUMBER_TO_CHAR_LIST.put(5,new ArrayList<>(Arrays.asList('j', 'k', 'l')));
+        NUMBER_TO_CHAR_LIST.put(6,new ArrayList<>(Arrays.asList('m', 'n', 'o')));
+        NUMBER_TO_CHAR_LIST.put(7,new ArrayList<>(Arrays.asList('p', 'q', 'r', 's')));
+        NUMBER_TO_CHAR_LIST.put(8,new ArrayList<>(Arrays.asList('t', 'u', 'v')));
+        NUMBER_TO_CHAR_LIST.put(9,new ArrayList<>(Arrays.asList('w', 'x', 'y', 'z')));
+    }    
     public static Set<String> getStringsFromNumbers(String num) {
         Set<String> results = new HashSet<>();
         for (int i = 0; i < num.length(); i++) {
@@ -18,18 +29,9 @@ public class LetterCombinationsPhoneNumber {
         return results;
     }
     private static Set<String> addCharToStrings(Set<String> strList, Integer val) {
-        if (val < 2 || val > 9) return strList;
-        Map<Integer, List<Character>> numToChar = new HashMap<>();
-        numToChar.put(2,new ArrayList<>(Arrays.asList('a', 'b', 'c')));
-        numToChar.put(3,new ArrayList<>(Arrays.asList('d', 'e', 'f')));
-        numToChar.put(4,new ArrayList<>(Arrays.asList('g', 'h', 'i')));
-        numToChar.put(5,new ArrayList<>(Arrays.asList('j', 'k', 'l')));
-        numToChar.put(6,new ArrayList<>(Arrays.asList('m', 'n', 'o')));
-        numToChar.put(7,new ArrayList<>(Arrays.asList('p', 'q', 'r', 's')));
-        numToChar.put(8,new ArrayList<>(Arrays.asList('t', 'u', 'v')));
-        numToChar.put(9,new ArrayList<>(Arrays.asList('w', 'x', 'y', 'z')));
+        if (!NUMBER_TO_CHAR_LIST.containsKey(val)) return strList;
         Set<String> results = new HashSet<>();
-        List<Character> charList = numToChar.get(val);
+        List<Character> charList = NUMBER_TO_CHAR_LIST.get(val);
         for (Character ch : charList) {
             if (strList.isEmpty()) results.add(String.valueOf(ch));
             else {
