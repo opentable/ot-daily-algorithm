@@ -59,6 +59,7 @@ end
 
 def main
   test_results([2, 3, 5], 8, true)
+  test_results([2, 3, 5], 9, true)
   test_results([1, 2, 5, 10], 10, true)
   test_results([1, 2, 5, 10], 15)
   test_results([2, 3, 5], 17)
