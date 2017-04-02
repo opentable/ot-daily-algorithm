@@ -11,6 +11,8 @@ import java.util.*;
  *       / \   \
  *      5   3   9
  * Output: [1, 3, 9]
+ * 
+ * Solution: Traverse tree, maintain highest value for each row O(n)
  */
 public class LargestValueInTreeRow {
     public static class TreeNode {
