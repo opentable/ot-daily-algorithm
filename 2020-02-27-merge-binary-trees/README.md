@@ -19,3 +19,5 @@ Merged tree:
 	   4   5
 	  / \   \ 
 	 5   4   7
+
+Link to original question: https://leetcode.com/problems/merge-two-binary-trees/
